@@ -1,5 +1,6 @@
 class Post
 
+attr_accessor :user
 
 def summary 
 b = Array.new
@@ -13,10 +14,11 @@ b = Array.new
 end
 
    def tagme
+
    end
 
-   def same
-
+   def same?
+    
    end
 
    def save 
@@ -24,8 +26,10 @@ end
  	f.write YAML::dump products
   end
   
-  def display_entry
-	
+  def display_entry (title, text, date, user)
+    puts user, date
+    puts title
+    puts text
   end
 
 end

@@ -4,6 +4,7 @@ describe User do
 
   describe "#initialize" do
     it "should properly initialize with an username"
+ 
   end
 
   describe "#add_post" do

@@ -36,8 +36,6 @@ describe Post do
     it "should display the first 10 words of text"
     expect(post.summary).to be_kind_of(string)
 end
-
-puts b.join(', ')
   end
 
   describe "#tagme" do
@@ -58,6 +56,9 @@ puts b.join(', ')
 
   describe "#save" do
     it "should save the post to a YAML file"
+   @post.add_user 'new', 'its a new post', '2013/10/19', 'elena'
+   @post.save
+   loaded_post = Post.new(title.yml)
   end
 
 end

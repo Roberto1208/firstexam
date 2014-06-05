@@ -13,12 +13,12 @@ b = Array.new
     end
 end
 
-   def tagme
-
+   def tagme n
+         
    end
 
-   def same?
-    
+   def same? 
+        
    end
 
    def save 

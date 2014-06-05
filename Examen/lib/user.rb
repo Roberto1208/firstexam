@@ -18,7 +18,7 @@ class User
   end
 
   def find_post_by_title (title)
-
+     posts.select { |post| post.title == title}.first
   end
 
 end
