@@ -8,9 +8,12 @@ describe Post do
             user.new("tird", "its my post, yes", "2003/05/03", "luis jose")
             user.new("fourth", "its my post, yeah", "2003/05/03", "luis jose")
            ]
+	File.open "post.yml", 'w' do |f|
+       f.write YAML::dump orders
+   end
  
  before(:each) do
-  @user = post.new 'post.yml' 
+  @post = post.new 'post.yml' 
  end
 
   describe "#initialize" do
@@ -31,7 +34,7 @@ describe Post do
   end
   describe "#summary" do
     it "should display the first 10 words of text"
-    
+    expect(post.summary).to be_kind_of(string)
 end
 
 puts b.join(', ')
@@ -49,6 +52,8 @@ puts b.join(', ')
 
   describe "#display_entry" do
     it "should properly output a post entry"
+	
+	post.display_entry
   end
 
   describe "#save" do
