@@ -1,0 +1,51 @@
+require 'spec_helper.rb'
+
+describe Product do
+
+	let(:product) { Product.new('Fridge', 300.00, :electronics) }
+
+	describe "When creating a new a product" do
+		context "With valid parameters" do
+			it "should take 3 parameters and return a product object" do
+                expect(product).to be_instance_of(Product)
+            end
+		end
+	end
+
+	describe "#title" do
+		it "should return the correct title" do
+			# the name of the object created in the each block is asserted.
+            expect(product.title).to eql("Fridge")
+        end
+
+		it "should be a string" do
+			# the name should be of the class String
+            expect(product.title).to be_kind_of(String)
+        end
+	end
+
+	describe "#price" do
+		it "should return the correct price" do
+			# the price of the object created in the each block is asserted.
+            expect(product.price).to eql(300.00)
+        end
+
+		it "should be a float" do
+			# the price should be of the class Float
+            expect(product.price).to be_kind_of(Float)
+        end
+	end
+
+	describe "#category" do
+		it "should return the correct category" do
+			# the category of the object created in the each block is asserted.
+            expect(product.category).to eql(:electronics)
+        end
+
+		it "should be a symbol" do
+			# the category should be of the class Symbol
+            expect(product.category).to be_kind_of(Symbol)
+        end
+	end
+
+end
