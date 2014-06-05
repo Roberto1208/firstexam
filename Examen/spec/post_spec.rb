@@ -2,6 +2,17 @@ require 'spec_helper'
 
 describe Post do
 
+  before (:all) do 
+   users = [user.new("first", "its my first post", "2003/05/03", "luis jose")
+            user.new("second", "its my post", "2003/05/03", "luis jose")
+            user.new("tird", "its my post, yes", "2003/05/03", "luis jose")
+            user.new("fourth", "its my post, yeah", "2003/05/03", "luis jose")
+           ]
+ 
+ before(:each) do
+  @user = post.new 'post.yml' 
+ end
+
   describe "#initialize" do
 
     context "with a yaml file" do
