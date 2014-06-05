@@ -8,6 +8,7 @@ b = Array.new
     if i < 10
     b.push a
     i += 1
+    b = b.join(', ')
     end
 end
 
@@ -15,15 +16,17 @@ end
    end
 
    def same
+
    end
 
-   def save
-	File.open "my_products.yml", 'w' do |f|
-           
+   def save 
+	File.open ".yml", 'w' do |f|
  	f.write YAML::dump products
   end
-
-
+  
+  def display_entry
+	
+  end
 
 end
 
